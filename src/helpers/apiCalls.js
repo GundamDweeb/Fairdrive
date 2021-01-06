@@ -7,6 +7,7 @@ const host = process.env.REACT_APP_FAIROSHOST + "/v0/"
 const axi = axios.create({ baseURL: host, timeout: 600000 });
 
 export async function logIn(username, password) {
+  debugger;
   try {
     const requestBody = {
       user: username,
@@ -15,7 +16,8 @@ export async function logIn(username, password) {
 
     const config = {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*"
       }
     };
 
@@ -38,10 +40,12 @@ export async function logIn(username, password) {
 }
 
 export async function logOut() {
+  debugger;
   try {
     const config = {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*"
       }
     };
 
@@ -65,7 +69,8 @@ export async function isLoggedIn(username) {
 
     const config = {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*"
       },
       paramsSerializer: function (params) {
         return qs.stringify(params, { arrayFormat: "brackets" });
@@ -88,7 +93,8 @@ export async function isUsernamePresent(username) {
 
     const config = {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*"
       },
       paramsSerializer: function (params) {
         return qs.stringify(params, { arrayFormat: "brackets" });
@@ -106,7 +112,8 @@ export async function isUsernamePresent(username) {
 export async function fileUpload(files, directory, onUploadProgress) {
   const config = {
     headers: {
-      "Content-Type": "multipart/form-data"
+      "Content-Type": "multipart/form-data",
+      "Access-Control-Allow-Origin": "*"
     }
   };
 
@@ -136,7 +143,8 @@ export async function fileDownload(file, filename) {
   try {
     const config = {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*"
       }
     };
 
@@ -163,7 +171,8 @@ export async function getDirectory(directory, password) {
   try {
     const config = {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*"
       }
     };
 
@@ -196,6 +205,7 @@ export async function getDirectory(directory, password) {
 }
 
 export async function createAccount(username, password, mnemonic) {
+  debugger;
   try {
     const requestBody = {
       user: username,
@@ -205,7 +215,8 @@ export async function createAccount(username, password, mnemonic) {
 
     const config = {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*"
       }
     };
 
@@ -240,7 +251,8 @@ export async function storeAvatar(avatar) {
 
     const config = {
       headers: {
-        "Content-Type": "multipart/form-data"
+        "Content-Type": "multipart/form-data",
+        "Access-Control-Allow-Origin": "*"
       }
     };
 
@@ -270,7 +282,8 @@ export async function getAvatar(username) {
   try {
     const config = {
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
       }
     };
 
@@ -297,7 +310,8 @@ export async function createPod(passWord, podName) {
   try {
     const config = {
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*"
       }
     };
     const podRequest = {
